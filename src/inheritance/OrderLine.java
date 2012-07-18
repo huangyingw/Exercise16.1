@@ -18,9 +18,7 @@ public class OrderLine {
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Order order;
 
-	public OrderLine(int orderid, Date date) {
-		super();
-		this.id = orderid;
+	public OrderLine() {
 	}
 
 	public OrderLine(int quantity) {
