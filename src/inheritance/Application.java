@@ -28,6 +28,7 @@ public class Application {
 			Product pro = new Product("Ying", "A good stuff");
 			OrderLine oLine = new OrderLine(8);
 			pro.setOrderLine(oLine);
+			session.persist(pro);
 			tx.commit();
 
 		} catch (HibernateException e) {

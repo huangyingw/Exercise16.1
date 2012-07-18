@@ -52,9 +52,7 @@ public class Product {
 		this.orderLine = orderLine;
 	}
 
-	public Product(int orderid, Date date) {
-		super();
-		this.id = orderid;
+	public Product() {
 	}
 
 	public Product(String name, String description) {
