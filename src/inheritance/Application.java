@@ -25,7 +25,7 @@ public class Application {
 			tx = session.beginTransaction();
 
 			// Create new instance of Car and set values in it
-			Product pro = new Product("Ying", "A good stuff");
+			Product pro = new CD("Ying", "Ying", "A good stuff");
 			OrderLine oLine = new OrderLine(8);
 			pro.setOrderLine(oLine);
 			session.persist(pro);
