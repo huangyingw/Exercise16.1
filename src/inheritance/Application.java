@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,7 +25,9 @@ public class Application {
 			tx = session.beginTransaction();
 
 			// Create new instance of Car and set values in it
-
+			Product pro = new Product("Ying", "A good stuff");
+			OrderLine oLine = new OrderLine(8);
+			pro.setOrderLine(oLine);
 			tx.commit();
 
 		} catch (HibernateException e) {
@@ -37,7 +41,10 @@ public class Application {
 		try {
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-
+			List<Product> proList = session.createQuery("from Product").list();
+			for (Product pro : proList) {
+				System.out.println(pro.getName());
+			}
 			tx.commit();
 
 		} catch (HibernateException e) {

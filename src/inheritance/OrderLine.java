@@ -10,34 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Order {
+public class OrderLine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int orderid;
-	private Date date;
+	private int id;
+	private int quantity;
 	@ManyToOne(cascade = CascadeType.PERSIST)
-	private Customer customer;
+	private Order order;
 
-	public Order(int orderid, Date date) {
+	public OrderLine(int orderid, Date date) {
 		super();
-		this.orderid = orderid;
-		this.date = date;
+		this.id = orderid;
 	}
 
-	public int getOrderid() {
-		return orderid;
-	}
-
-	public void setOrderid(int orderid) {
-		this.orderid = orderid;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
+	public OrderLine(int quantity) {
+		super();
+		this.quantity = quantity;
 	}
 
 }

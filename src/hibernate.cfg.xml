@@ -24,6 +24,8 @@
     <!-- Mapping files -->
     <mapping class="inheritance.Customer"/>
     <mapping class="inheritance.Order"/>
+    <mapping class="inheritance.Product"/>
+    <mapping class="inheritance.OrderLine"/>
 
   </session-factory>
 </hibernate-configuration>
