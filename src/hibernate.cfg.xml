@@ -18,8 +18,6 @@
     <property name="use_sql_comments">true</property>
     <property name="hibernate.format_sql">true</property>
 
-    <!-- Always drop and recreate the database schema on startup -->      
-    <property name="hbm2ddl.auto">create</property>
 
     <!-- Mapping files -->
     <mapping class="inheritance.Customer"/>
