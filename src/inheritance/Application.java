@@ -25,10 +25,19 @@ public class Application {
 			tx = session.beginTransaction();
 
 			// Create new instance of Car and set values in it
+
 			Product pro = new CD("Ying", "Ying", "A good stuff");
 			OrderLine oLine = new OrderLine(8);
 			pro.setOrderLine(oLine);
 			session.persist(pro);
+
+			pro = new DVD("Huang", "Ying", "A good stuff");
+			pro.setOrderLine(oLine);
+			session.persist(pro);
+
+			pro = new Book("huangyingw", "Ying", "A good stuff");
+			session.persist(pro);
+
 			tx.commit();
 
 		} catch (HibernateException e) {
